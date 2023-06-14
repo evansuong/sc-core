@@ -1,0 +1,98 @@
+
+/* base page styles */
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+body.steady {
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+main.steady {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+/* screen change animations */
+main.steady > .sc-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    transition-duration: 1s;
+}
+
+main.steady > .sc-page .active {
+    opacity: 1;
+}
+
+main.steady > .sc-page .inactive {
+    opacity: 0;
+}
+
+
+/* 
+ * element animation styles 
+ */
+.sc-element {
+    top: 0;
+    opacity: 1;
+    transition-duration: 1s;
+    padding: 40px;
+    background-color: black;
+    color: white;
+}
+
+.sc-page.active .sc-element {
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+    top: 0;
+}
+
+.sc-page.inactive .sc-element {
+    opacity: 0;
+}
+
+/* element inactive states */
+.sc-page.inactive .sc-element.from-left {
+    transform: translateX(-100vw);
+}
+
+.sc-page.inactive .sc-element.from-right {
+    transform: translateX(100vw);
+}
+
+.sc-page.inactive .sc-element.from-top {
+    transform: translateY(-100vw);
+}
+
+.sc-page.inactive .sc-element.from-bottom {
+    transform: translateY(100vw);
+}
+
+.sc-page.active .sc-element.from-small {
+    transform: scale(1);
+}
+
+.sc-page.inactive .sc-element.from-small {
+    transform: scale(0);
+}
+
+
+
+

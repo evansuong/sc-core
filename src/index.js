@@ -1,8 +1,9 @@
-import './styles.css';;
+import './styles/styles.css';
+
 const PAGE_DATA_NAME = 'sc-page';
 
 // TODO: add a loading animation
-const scCore = {
+export const Core = {
 
     plugins: {}, // plugins
     currentPage: 0, // tracks the currently active page
@@ -199,27 +200,15 @@ const scCore = {
         return this.pages;
     },
 
-    registerPlugin: function (pluginPackage) {
-        let { name, plugin } = pluginPackage; 
-        this.plugins[name] = plugin;
-        this.plugins[name].init({
+    registerPlugin: function (plugin) {
+        this.plugins[plugin.name] = plugin;
+        this.plugins[plugin.name].init({
             sectionHeights: this.sectionHeights,
             currentPage: this.currentPage,
             activate: this.activate,
             deactivate: this.deactivate,
-            addCss: this.addCss,
             jumpToPage: (page) => this.jumpToPage(page, this.sectionHeights)
         });
-    },
-
-    addCss: function (fileName) {
-        // add css stylesheet to document
-        var head = document.head;
-        var link = document.createElement("link");
-        link.type = "text/css";
-        link.rel = "stylesheet";
-        link.href = fileName;
-        head.appendChild(link);
     },
 
     jumpToPage: function (page, sectionHeights) {
@@ -233,10 +222,3 @@ const scCore = {
         });
     },
 }
-
-
-window.addEventListener('DOMContentLoaded', function() {
-    fetch('./config.json')
-        .then((response) => response.json())
-        .then((json) => scCore.init(json));
-});

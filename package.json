@@ -1,0 +1,35 @@
+{
+  "name": "sc-core",
+  "version": "1.0.0",
+  "description": "scroll compnents core ",
+  "main": "./dist/index.js",
+  "browser": "./dist/index.browser.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evansuong/sc-core.git"
+  },
+  "keywords": [
+    "sc-core"
+  ],
+  "author": "Evan Suong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evansuong/sc-core/issues"
+  },
+  "homepage": "https://github.com/evansuong/sc-core#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "babel-loader": "^9.1.2",
+    "webpack": "^5.87.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "style-loader": "^3.3.3"
+  }
+}

@@ -1,4 +1,4 @@
-import './styles/styles.css';
+// import './styles/styles.css';
 
 const PAGE_DATA_NAME = 'sc-page';
 
